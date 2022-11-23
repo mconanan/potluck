@@ -8,7 +8,7 @@ function Navbar (props) {
     const tabs = ['Home', 'Signup/Login', 'Dashboard'];
     return (
       <div className="tabs is-centered">
-        <h1>Potluck</h1>
+        <h1>Shared Cultery</h1>
       <ul className="nav nav-tabs 12px">
         {tabs.map((tab) => (
           <li className={
