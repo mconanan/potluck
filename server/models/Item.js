@@ -1,14 +1,13 @@
 const { Schema, Types } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
 
-const commentSchema = new Schema(
+const itemSchema = new Schema(
     {
-        commentId: {
+        itemId: {
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
         },
 
-        commentText: {
+        itemDescription: {
             type: String,
             required: true,
             maxlength: 200
@@ -17,11 +16,6 @@ const commentSchema = new Schema(
         username: {
             type: String,
             required: true,
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now,
-            get: createdAtVal => dateFormat(createdAtVal)
         },
     },
     {
@@ -32,8 +26,5 @@ const commentSchema = new Schema(
         id: false,
     }
 );
-commentSchema.virtual('reactionCount').get(function () {
-    return this.reactions.length;
-})
 
-module.exports = commentSchema;
+module.exports = itemSchema;
