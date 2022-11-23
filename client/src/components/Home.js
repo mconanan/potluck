@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Home() {
   return (
     <div>
@@ -18,18 +20,9 @@ function Home() {
       <div class="section">
         
         <div className="text">
-        <div class="div1">Welcome to ur Potluck App where you can create a potluck and share
+        <div class="div1 text">Welcome to our Potluck App where you can create a potluck and share
             with friends and family. Let the fiesta begin! </div>      
         </div>    
-        {/* <img
-          class="mb-7 center"
-          id="avatar"
-          src=""
-          width="350"
-          height="400"
-          alt="Party Time"
-        />      */}
-        
       </div>
     </div>
   );
