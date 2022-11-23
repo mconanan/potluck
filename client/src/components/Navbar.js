@@ -5,7 +5,7 @@
 
 
 function Navbar (props) {
-    const tabs = ['Home', 'Signup/Login', 'Comments'];
+    const tabs = ['Home', 'Signup/Login', 'Dashboard'];
     return (
       <div className="tabs is-centered">
         <h1>Potluck</h1>

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import CreatePotluck from "./CreatePotluck";
 import Home from "./Home";
 import Signup from "./Signup";
-import Comments from "./Comments";
+import Dashboard from "./Dashboard";
 
 
 function Header() {
@@ -17,8 +17,8 @@ function Header() {
         return <Signup/>;
       case "CreatePotluck":
         return <CreatePotluck />;
-      case "Comments":
-        return <Comments />;
+      case "Dashboard":
+        return <Dashboard />;
     default:
         return <Home />;
     }
