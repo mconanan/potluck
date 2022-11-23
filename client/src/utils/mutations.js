@@ -23,3 +23,7 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_POTLUCK = gql `
+
+`
