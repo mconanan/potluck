@@ -3,8 +3,6 @@ import React from 'react';
 function Home() {
   return (
     <div>
-      {/* <h1>Home</h1>
-        <p className='content is-medium'>Our Unique Potluck</p> */}
       <hr />
       <div class="row">
   <div class="column">
