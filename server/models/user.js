@@ -14,18 +14,17 @@ const userSchema = new Schema(
             unique: true,
             match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'valid email pleasa']
         },
-        comments: [
+        password: {
+            type: String,
+            required: true,
+            minlength: 5,
+        },
+        potlucks: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'comment'
+                ref: 'potluck'
             }
         ],
-        friends: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'user'
-            }
-        ]
     },
     {
         toJSON: {

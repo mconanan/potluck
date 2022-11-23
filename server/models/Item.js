@@ -1,41 +1,32 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
 
-const itemSchema = new Schema({
-  itemText: {
-    type: String,
-    required: 'Enter your potluck item',
-    minlength: 1,
-    maxlength: 280,
-    trim: true,
-  },
-  thoughtAuthor: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
-  },
-  comments: [
+const { Schema, Types } = require('mongoose');
+
+const itemSchema = new Schema(
     {
-      commentText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 280,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-      },
+        itemId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+        },
+
+        itemDescription: {
+            type: String,
+            required: true,
+            maxlength: 200
+        },
+
+        username: {
+            type: String,
+            required: true,
+        },
     },
-  ],
-});
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true,
+        },
+        id: false,
+    }
+);
 
-const Thought = model('Item', itemSchema);
+module.exports = itemSchema;
 
-module.exports = Thought;
