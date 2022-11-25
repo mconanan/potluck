@@ -7,7 +7,7 @@ type User {
     email: String
     friendCount: Int
     friends: [User]
-     comments:[Comment]
+     potlucks:[Potluck]
   }
   
   type Comment {
