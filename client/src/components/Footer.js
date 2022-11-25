@@ -7,7 +7,7 @@ function Footer() {
             <div className='container'>
                 <p>
                     <strong>Don't know what to bring? Please check out these simple recipes!</strong>  {' '}
-                   
+             
                     <hr />
                 </p>
             </div>
