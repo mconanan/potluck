@@ -14,7 +14,7 @@ type User {
     comentId: ID
     commentText: String
     username: String
-    createdAt:Date
+    createdAt:String
     reactions:[Reaction]
     
   }
@@ -22,8 +22,14 @@ type Reaction {
     reactionId:ID
     reactionBody:String
     username:String
-    createdAt:Date
+    createdAt: String
 }
+
+type Auth {
+    token: ID!
+    user: User
+  }
+
 type Query{
   me: User
 }
