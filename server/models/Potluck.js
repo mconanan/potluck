@@ -17,6 +17,7 @@ const potluckSchema = new Schema(
         },
         potluckDate: {
            //add type etc.
+           type: String, 
         },
         items: [itemSchema],
         comments: [commentSchema],
