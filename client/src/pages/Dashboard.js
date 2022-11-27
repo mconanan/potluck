@@ -1,4 +1,4 @@
-import CreatePotluckForm from "../components/CreatePotluck";
+// import CreatePotluckForm from "../components/CreatePotluck";
 import ItemList from "../components/ItemList";
 
 export default function UserLogin() {
@@ -7,7 +7,7 @@ export default function UserLogin() {
     // ternary here for "if user is logged in display this"
     <div className="user-login">
       <div className="login-forms">
-        <CreatePotluckForm />
+        {/* <CreatePotluckForm /> */}
       </div>
       <div className="potluck-items">
         <ItemList />
