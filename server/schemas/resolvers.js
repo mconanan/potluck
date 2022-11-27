@@ -1,13 +1,13 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Comment } = require('../models');
+const { User, Potluck } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-
-        me: async (parent, args, context) => {
+//req.body = args 
+        me: async (_parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('comments');
+                return User.findOne({ _id: context.user._id }).populate('potlucks');
             }
             throw new AuthenticationError('You need to be logged in!');
         },
@@ -36,37 +36,33 @@ const resolvers = {
 
             return { token, user };
         },
-        saveComment: async (parent, body, context) => {
-
-            if (context.user) {
-                console.log('body', body);
-                const updatedUser = await Comment.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { savedComments: body.newComment } },
-                    { new: true, runValidators: true }
-                );
-                return updatedUser;
-            }
-            throw new AuthenticationError('You need to be logged in!');
-        },
-
-        removComment: async (parent, { commentId }, context) => {
+        addPotluck: async (parent, { potluckName, potluckAddress, potluckDate }, context) => {
             if (context.user) {
 
-                const updatedUser = await Comment.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { savedCommentss: { commentId: commentId } } },
-                    { new: true }
-                );
+                const createPotluck = await Potluck.create({
+                    potluckName, 
+                    potluckAddress,
+                    potluckDate, 
+                    username: context.user.username,
+                 });
 
-                if (!updatedUser) {
-                    throw new Error('could not find user!');
-                }
-                return updatedUser;
+                await User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    { $addToSet: { potlucks: createPotluck._id}}
+                )
 
             }
-            throw new AuthenticationError('You need to be logged in!');
+            throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
         },
+        addFriends: //Sav do in office hours
+                    //map over all users in database
+                    //select ones you want to filter into potluck by id
+                    //push to user potluck array by potluck id
+
+
+        addItem: //update potluck to add item
+
+        addComment: //update potluck to add comment
 
     },
 };
