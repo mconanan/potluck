@@ -5,11 +5,11 @@ import { useQuery } from '@apollo/client';
 import ItemList from '../components/ItemList';
 
 // Import the query we are going to execute from its file
-import { QUERY_ITEMS } from '../utils/queries';
+// import { QUERY_ITEMS } from '../utils/queries';
 
 const Home = () => {
   // Execute the query on component load
-  const { loading, data } = useQuery(QUERY_ITEMS);
+  const { loading, data } = useQuery();
 
   // Use optional chaining to check if data exists and if it has a items property. If not, return an empty array to use.
   const items = data?.items || [];
