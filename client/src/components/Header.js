@@ -18,7 +18,7 @@ function Header() {
       case "CreatePotluck":
         return <CreatePotluck />;
       case "Dashboard":
-        return <Dashboard/>;
+        return <Dashboard />;
     default:
         return <Home />;
     }
