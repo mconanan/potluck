@@ -5,23 +5,34 @@
 
 
 function Navbar (props) {
-    const tabs = ['Home', 'Signup/Login', 'Dashboard'];
+    const tabs = [{
+      text: "Home",
+      link: "/"
+    }, {
+      text: "Signup/Login",
+      link: "/login"
+    },
+    {
+      text: "Dashboard",
+      link: "/dashboard"
+    }
+  ]
     return (
       <div className="tabs is-centered">
         <h1>Sharecuterie</h1>
       <ul className="nav nav-tabs 12px">
         {tabs.map((tab) => (
           <li className={
-            props.currentPage === tab ? 'nav-item is-active' : 'nav-item'
+            props.currentPage === tab.text ? 'nav-item is-active' : 'nav-item'
           }
-          key={tab}
+          key={tab.text}
           >
-           <a href={'#' + tab.toLowerCase()}
-            onClick={() => props.handlePageChange(tab)} className={
-              props.currentPage === tab ? 'tav-link active' : 'nav-link'
+           <a href={tab.link}
+            onClick={() => props.handlePageChange(tab.text)} className={
+              props.currentPage === tab.text ? 'tav-link active' : 'nav-link'
             }
             >
-              {tab}
+              {tab.text}
               </a>
           </li>
         ))}
