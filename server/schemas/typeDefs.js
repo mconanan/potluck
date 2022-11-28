@@ -44,10 +44,10 @@ const typeDefs = gql`
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
-  addPotluck(potluckName: String!, potluckAddress: String!, potluckDate: String!)
-  addFriends(username: String!)
-  addItem(itemName: String! itemDescription: String!)
-  addComment(commentText: String! username:String!)
+  addPotluck(potluckName: String!, potluckAddress: String!, potluckDate: String!):Potluck
+  addFriends(username: String!): User
+  addItem(itemName: String! itemDescription: String!): Potluck
+  addComment(commentText: String! username:String!): Potluck
     
     
 

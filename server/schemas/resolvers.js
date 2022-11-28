@@ -4,7 +4,7 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-//req.body = args 
+        //req.body = args 
         me: async (_parent, args, context) => {
             if (context.user) {
                 return User.findOne({ _id: context.user._id }).populate('potlucks');
@@ -40,31 +40,71 @@ const resolvers = {
             if (context.user) {
 
                 const createPotluck = await Potluck.create({
-                    potluckName, 
+                    potluckName,
                     potluckAddress,
-                    potluckDate, 
+                    potluckDate,
                     username: context.user.username,
-                 });
+                });
 
                 await User.findOneAndUpdate(
-                    {_id: context.user._id},
-                    { $addToSet: { potlucks: createPotluck._id}}
+                    { _id: context.user._id },
+                    { $addToSet: { potlucks: createPotluck._id } }
                 )
 
             }
             throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
         },
-        addFriends: //Sav do in office hours
-                    //map over all users in database
-                    //select ones you want to filter into potluck by id
-                    //push to user potluck array by potluck id
+        addFriends:
+            async function (parent, args, context) {
+                if (context.user) {
+
+                    const friend = await User.findOne(
+                        { username: args.username },
+                    )
+
+                    const user = await User.findOneAndUpdate({
+                        _id: context.user._id,
+
+                    }, { $addToSet: { friends: friend._id } });
 
 
+
+                    return user
+                    //not functionald
+
+                }
+                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
+
+            }
+        ,
         addItem: //update potluck to add item
+            async function (parent, args, context) {
+                if (context.user) {
 
+
+                    //need potluck id
+                    const potluck = await Potluck.findOneAndUpdate(
+                        { _id: args.potluck_id },
+                        { $addToSet: { items: args } }
+                    )
+                    return potluck
+                }
+                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
+            },
         addComment: //update potluck to add comment
+            async function (parent, args, context) {
+                if (context.user) {
 
-    },
+                    //need potluck id
+                    const potluck = await Potluck.findOneAndUpdate(
+                        { _id: args.potluck_id },
+                        { $addToSet: { comments: { commentText: args.commentText, username: args.username } } }
+                    )
+                    return potluck
+                }
+                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
+            }
+    }
 };
 
 module.exports = resolvers;
