@@ -16,11 +16,11 @@ function App() {
   return (
     <div className='page-container'>
       <div className='content-wrap'>
- <Router>
-<Navbar> </Navbar>
-<Footer></Footer>
+<Router>
+<Navbar/>
    <Routes>
-     <Route exact path="/" element={<Home></Home>}/></Routes>
+     <Route exact path="/" element={<Home/>}/>
+   </Routes>
  </Router>
  </div>
  </div>
