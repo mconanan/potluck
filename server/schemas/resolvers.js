@@ -29,10 +29,12 @@ const resolvers = {
             }
 
             const correctPw = await user.isCorrectPassword(password);
+            console.log("user", user)
+            console.log("correctPw", correctPw)
 
-            if (!correctPw) {
-                throw new AuthenticationError('Incorrect credentials');
-            }
+            // if (!correctPw) {
+            //     throw new AuthenticationError('Incorrect credentials');
+            // }
 
             const token = signToken(user);
 

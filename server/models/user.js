@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const bcrypt = require ('bcrypt');
 
 // Schema to create User model
 const userSchema = new Schema(
@@ -45,6 +46,10 @@ userSchema
     .get(function () {
         return this.friends.length;
     })
+
+userSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+};
 
 const User = model('user', userSchema);
 
