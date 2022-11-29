@@ -1,5 +1,5 @@
-// import {
-//    Link } from "react-router-dom";
+import {
+   Link } from "react-router-dom";
 
    import React from 'react';
 
@@ -27,13 +27,13 @@ function Navbar (props) {
           }
           key={tab.text}
           >
-           <a href={tab.link}
+           <Link to={tab.link}
             onClick={() => props.handlePageChange(tab.text)} className={
               props.currentPage === tab.text ? 'tav-link active' : 'nav-link'
             }
             >
               {tab.text}
-              </a>
+              </Link>
           </li>
         ))}
         </ul>
