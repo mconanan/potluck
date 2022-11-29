@@ -25,6 +25,12 @@ const userSchema = new Schema(
                 ref: 'potluck'
             }
         ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'user'
+            }
+        ],
     },
     {
         toJSON: {
