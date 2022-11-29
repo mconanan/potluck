@@ -21,7 +21,7 @@ import './index.css';
 
 // } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import UserLogin from './pages/UserLogin';
 import Dashboard from './pages/Dashboard';
 // import Potluck from './pages/Potluck';
@@ -53,19 +53,21 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className='page-container'>
-      <div className='content-wrap'>
+      <div className='page-container'>
+        <div className='content-wrap'>
 
-<Router>
-<Navbar/>
-   <Routes>
-     <Route exact path="/" element={<Home/>}/>
-   </Routes>
- </Router>
- </div>
- </div>
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/login" element={<UserLogin></UserLogin>} />
+              <Route exact path="/dashboard" element={<Dashboard></Dashboard>} />
+            </Routes>
+          </Router>
+        </div>
+      </div>
 
-       
+
     </ApolloProvider>
 
   );

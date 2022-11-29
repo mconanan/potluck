@@ -31,7 +31,7 @@ function Header() {
           </nav>
           <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
           <main>
-              <div>{renderPage(currentPage)}</div>
+              {/* <div>{renderPage(currentPage)}</div> */}
           </main>
       </div>
   );
