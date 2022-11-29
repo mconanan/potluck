@@ -55,20 +55,19 @@ function App() {
     <ApolloProvider client={client}>
     <div className='page-container'>
       <div className='content-wrap'>
-        <Router>
-          <Navbar> </Navbar>
-          <Footer></Footer>
-          <Routes>
-            <Route exact path="/" element={<Home></Home>} />
-            <Route exact path="/login" element={<UserLogin></UserLogin>} />
-            <Route exact path="/dashboard" element={<Dashboard></Dashboard>}/>
-     {/* <Route exact path="/potluck" element={<Potluck></Potluck>}/> */}
-          </Routes>
-        </Router>
 
-      </div>
-    </div>
+<Router>
+<Navbar/>
+   <Routes>
+     <Route exact path="/" element={<Home/>}/>
+   </Routes>
+ </Router>
+ </div>
+ </div>
+
+       
     </ApolloProvider>
+
   );
 }
 
