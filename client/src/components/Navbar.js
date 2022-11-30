@@ -3,21 +3,29 @@ import {
 
    import React from 'react';
 
-
 function Navbar (props) {
+  
     const tabs = [{
       text: "Home",
       link: "/"
     }, {
-      text: "Signup/Login",
-      link: "/login"
-    },
+      text: localStorage.getItem('id_token') ? "Logout": "Login/Signup",
+      link: localStorage.getItem('id_token') ? localStorage.removeItem('id_token'): "/Login"
+      // text: "Login",
+      // link: "/dashboard"
+
+
+
+      },
+
     {
       text: "Dashboard",
       link: "/dashboard"
     }
   ]
+
     return (
+      
       <div className="tabs is-centered">
         <h1>Sharecuterie</h1>
       <ul className="nav nav-tabs 12px">
