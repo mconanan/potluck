@@ -28,8 +28,9 @@ const CreatePotluckForm = () => {
       const { data } = await addPotluck({
         variables: { ...formState },
       });
-
-      Auth.login(data.addPotluck.token);
+      //do we need this?
+      // Auth.login(data.addPotluck.token);
+      window.location.href = "/potluck/" + data.addPotluck._id
     } catch (e) {
       console.error(e);
     }
@@ -41,7 +42,7 @@ const CreatePotluckForm = () => {
           <input
             className="form-input"
             placeholder="Name of Potluck"
-            name="potluck"
+            name="potluckName"
             type="text"
             value={formState.name}
             onChange={handleChange}

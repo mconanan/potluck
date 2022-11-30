@@ -10,15 +10,15 @@ const potluckSchema = new Schema(
             unique: true,
             required: true,
         },
-        potluckAddress: {
-            type: String, 
-            unique: true, 
-            required: true,
-        },
-        potluckDate: {
-           //add type etc.
-           type: String, 
-        },
+        // potluckAddress: {
+        //     type: String, 
+        //     unique: true, 
+        //     required: true,
+        // },
+        // potluckDate: {
+        //    //add type etc.
+        //    type: String, 
+        // },
         items: [itemSchema],
         comments: [commentSchema],
     
