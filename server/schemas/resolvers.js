@@ -40,21 +40,21 @@ const resolvers = {
 
             return { token, user };
         },
-        addPotluck: async (parent, { potluckName, potluckAddress, potluckDate }, context) => {
+        addPotluck: async (parent, { potluckName }, context) => {
             if (context.user) {
 
                 const createPotluck = await Potluck.create({
                     potluckName,
-                    potluckAddress,
-                    potluckDate,
-                    username: context.user.username,
+                    // potluckAddress,
+                    // potluckDate,
+                    // username: context.user.username,
                 });
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { potlucks: createPotluck._id } }
                 )
-
+            return createPotluck
             }
             throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
         },

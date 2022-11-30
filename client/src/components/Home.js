@@ -33,42 +33,42 @@ function Home() {
     <div>
       <hr />
       <div className="row">
-        <div className="column">
+        <div className="column text-center">
           <img
             src="./Assets/pexels-lina-kivaka-1813505.jpg"
             alt="Spread of food"
           />
         </div>
-        <div className="column">
+        <div className="column text-center">
           <img
             src="./Assets/pexels-kaboompics-com-5929.jpg"
             alt="Spread of food"
           />
         </div>
-        <div className="column">
+        <div className="column text-center">
           <img src="./Assets/pexels-flo-dahm-.jpg" alt="Spread of food" />
         </div>
       </div>
-      <div className="section">
+      <div className="section justify-content-center">
         <div className="text">
-          <div className="div1 text">
+          <div className="div1 text text-center">
             Welcome to our Potluck App where you can create a potluck and share
             with friends and family. Let the fiesta begin!{" "}
           </div>
         </div>
       </div>
       <div className='container'>
-                <p>
-                    <strong>Don't know what to bring? Please check out these simple recipes!</strong>  {' '}
-                </p>
+                <h3 className='text-center mt-2'>
+                    <strong >Don't know what to bring? Please check out these simple recipes!</strong>  {' '}
+                </h3>
                 <hr />
-                <div className="col-12 col-lg-3">
-                    <button className="btn btn-primary btn-block py-3" type="button" onClick={()=>fetchRecipeData()}>
-                     Get Recipes
-                    </button>
-                </div>
                 {!results && <h2>Sorry! No Recipes Yet!</h2>}
                 <RecipeList results={results} />
+                <div className="d-grid gap-2">
+                    <button className="btn btn-primary btn-block py-3" type="button" onClick={()=>fetchRecipeData()}>
+                     Generate New Recipe Ideas
+                    </button>
+                </div>
       </div>
     </div>
   );

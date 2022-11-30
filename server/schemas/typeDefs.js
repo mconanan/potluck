@@ -11,8 +11,6 @@ const typeDefs = gql`
   type Potluck {
     _id: ID
     potluckName: String
-    potluckAddress: String
-    potluckDate: String
     item: [Item]
     comments: [Comment]
   }
@@ -44,17 +42,10 @@ const typeDefs = gql`
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
-  addPotluck(potluckName: String!, potluckAddress: String!, potluckDate: String!):Potluck
+  addPotluck(potluckName: String!):Potluck
   addFriends(username: String!): User
   addItem(itemName: String! itemDescription: String!): Potluck
   addComment(commentText: String! username:String!): Potluck
-    
-    
-
-
-  
-    
-  
 
 }
 `
