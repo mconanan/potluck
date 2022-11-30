@@ -52,6 +52,7 @@ In order to contribute to this application, please contact the authors via email
 - ![Recipe](/potluck/client/public/Assets/Recepe.png)
 - ![Logout](/potluck/client/public/Assets/logout.png)
 
+
 ##Links
 - [GitHub](https://github.com/mconanan/potluck)
 - [Heroku-Deploy](llink to depoy)
