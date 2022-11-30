@@ -5,9 +5,12 @@ import { ADD_POTLUCK } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
-const CreatePotluckForm = () => {
+
+const CreatePotluckForm = (props) => {
+
+
   const [formState, setFormState] = useState({
-    potluckName: "",
+    potluckName: "", potluckAddress: "", potluckDate: "",
   });
   const [addPotluck, { error, data }] = useMutation(ADD_POTLUCK);
 
@@ -33,6 +36,9 @@ const CreatePotluckForm = () => {
     } catch (e) {
       console.error(e);
     }
+
+    
+
   };
 
     return (
@@ -41,12 +47,30 @@ const CreatePotluckForm = () => {
           <input
             className="form-input"
             placeholder="Name of Potluck"
-            name="potluck"
+            name="potluckName"
             type="text"
-            value={formState.name}
+            value={formState.potluckName}
             onChange={handleChange}
           />
-
+          <br/>
+    <input
+            className="form-input"
+            placeholder="Date of Potluck"
+            name="potluckDate"
+            type="text"
+            value={formState.potluckDate}
+            onChange={handleChange}
+          />
+          <br/>
+          <input
+            className="form-input"
+            placeholder="Address of Potluck"
+            name="potluckAddress"
+            type="text"
+            value={formState.potluckAddress}
+            onChange={handleChange}
+          />
+          <br/>
           <button
             className="btn btn-block btn-primary"
             style={{ cursor: "pointer" }}
@@ -55,6 +79,14 @@ const CreatePotluckForm = () => {
             Submit
           </button>
         </form>
+      
+        {/* /* //  added to display potlucks if user is logged in
+  // const isLoggedIn = props.user.login;
+  // (isLoggedIn) ? {
+  //   user.potlucks.length > 0 ? <div>user.potlucks</div
+  // } :  <p>"No potlucks yet"</p> */}
+    
+         
       </div>
     );
   }

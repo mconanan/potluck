@@ -24,10 +24,10 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_POTLUCK = gql `
-mutation addPotluck ($potluckName: String!, $potluckAddress: String!, $potluckDate: String) {
+export const ADD_POTLUCK = gql`
+mutation addPotluck ($potluckName: String!, $potluckAddress: String!, $potluckDate: String!) {
   addPotluck(potluckName: $potluckName, potluckAddress: $potluckAddress, potluckDate: $potluckDate) {
-    potluck {
+    Potluck {
       potluckName
       potluckAddress
       potluckDate
