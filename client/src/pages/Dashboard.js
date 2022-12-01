@@ -24,7 +24,6 @@ export default function UserLogin() {
       <div className="potluck-items">
         <ItemList />
       </div>
-      {"hello dashboard"}
     </div>
   );
 }

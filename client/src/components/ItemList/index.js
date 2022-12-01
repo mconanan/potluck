@@ -7,7 +7,7 @@ const ItemList = (props) => {
 
   return (
     <div>
-      <h3>{"title"}</h3>
+      
       {!props && <h2> No data to display </h2>}
       {/* {items &&
         items.map((item) => (
