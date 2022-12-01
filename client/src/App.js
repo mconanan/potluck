@@ -20,7 +20,7 @@ import './index.css';
 //   Route,
 
 // } from "react-router-dom";
-import Navbar from './components/Navbar';
+import Navbar from './components/AppNavbar';
 // import Footer from './components/Footer';
 import UserLogin from './pages/UserLogin';
 import Logout from './pages/UserLogin'
