@@ -32,3 +32,18 @@ mutation addPotluck ($potluckName: String!) {
   }
 }
 `;
+
+export const ADD_ITEM = gql `
+mutation addItem($potluckId: ID!, $itemName: String!, $itemDescription: String!) {
+  addItem(potluckId: $potluckId, itemName: $itemName, itemDescription: $itemDescription) {
+    _id
+    potluckName
+    items {
+      itemId
+      itemName
+      itemDescription
+      username
+    }
+  }
+}
+`
