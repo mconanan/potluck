@@ -15,11 +15,9 @@ function Navbar (props) {
       text: localStorage.getItem('id_token') ? "Logout": "Login/Signup",
       link: localStorage.getItem('id_token') ? localStorage.removeItem('id_token'): "/Login"
       // text: "Login",
-      // link: "/dashboard"
-
-
-
+      // link: "/dashboard" 
       },
+      
 
     {
       text: "Dashboard",
