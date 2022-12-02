@@ -24,6 +24,7 @@ const ItemList = ({ items = [] }) => {
                 <p className="card-body">{item.itemName}</p>
                 <p className="card-body">{item.itemDescription}</p>
               </div>
+
             </div>
           ))}
       </div>
