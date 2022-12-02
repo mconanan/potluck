@@ -39,10 +39,9 @@ mutation addItem($potluckId: ID!, $itemName: String!, $itemDescription: String!)
     _id
     potluckName
     items {
-      itemId
+      _id
       itemName
       itemDescription
-      username
     }
   }
 }

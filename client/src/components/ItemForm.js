@@ -29,7 +29,7 @@ const ItemForm = ({ potluckId }) => {
 
     try {
       const { data } = await addItem({
-        variables: { ...formState },
+        variables: { potluckId, ...formState, username: Auth.getProfile().data.username },
       });
   setFormState('');
     //   setItemName('');

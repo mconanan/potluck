@@ -22,6 +22,7 @@ const SinglePotluck = () => {
 
   // Use optional chaining to check if data exists and if it has a items property. If not, return an empty array to use.
   const potluck = data?.potluck || {};
+  console.log('potluckData', potluck);
 
   if (loading) {
     return <div>Loading...</div>;

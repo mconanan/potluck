@@ -19,7 +19,7 @@ export const QUERY_SINGLE_POTLUCK = gql`
       _id
       potluckName
       items {
-        itemId
+        _id
         itemName
         itemDescription
         username
