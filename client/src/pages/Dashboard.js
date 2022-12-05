@@ -1,5 +1,4 @@
 import CreatePotluckForm from "../components/CreatePotluck";
-import ItemList from "../components/ItemList";
 import RenderPotlucks from "../components/RenderPotlucks";
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from "../utils/queries"; 
@@ -21,10 +20,6 @@ export default function UserLogin() {
       <div>
         <RenderPotlucks potlucks={me?.potlucks}/>
       </div>
-      <div className="potluck-items">
-        <ItemList />
-      </div>
-      {"hello dashboard"}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function RenderPotlucks(props) {
     console.log('props1', props.results);
@@ -8,9 +9,9 @@ function RenderPotlucks(props) {
             {props?.potlucks?.map((potluck) => (
                 <div className='card col m-2 p-1 ' key={potluck._id}>
 
-                    <a href={`/potluck/${potluck._id}`} target='_blank' rel='noreferrer'>
+                    <Link to={`/potluck/${potluck._id}`} >
                       {`${potluck.potluckName}`}  
-                    </a>
+                    </Link>
                 </div>
             ))}
             </div>
