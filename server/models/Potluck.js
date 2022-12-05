@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment');
+const commentSchema = require('./comment');
 const itemSchema = require('./Item');
 
 // Schema to create Potluck model
@@ -21,7 +21,7 @@ const potluckSchema = new Schema(
         // },
         items: [itemSchema],
         comments: [commentSchema],
-    
+
     },
     {
         toJSON: {
