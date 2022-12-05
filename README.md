@@ -47,7 +47,7 @@ In order to contribute to this application, please contact the authors via email
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Screenshots
-- ![Screen-Shot](/potluck/client/public/Assets/home.png)
+![Screen-Shot](/potluck/client/public/Assets/home.png)
 - ![Screen-Shot](/potluck/client/public/Assets/signin.png)
 - ![Screen-Shot](/potluck/client/public/Assets/Recepe.png)
 - ![Screen-Shot](/potluck/client/public/Assets/logout.png)
