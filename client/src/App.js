@@ -23,6 +23,7 @@ import './index.css';
 import Navbar from './components/Navbar';
 // import Footer from './components/Footer';
 import UserLogin from './pages/UserLogin';
+import Logout from './pages/UserLogin'
 import Dashboard from './pages/Dashboard';
 import Potluck from './pages/Potluck';
 
@@ -49,7 +50,12 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
+// const logout = () => {
+//   this.setState({ 
+//     sessionToken: '', 
+//   });
+//   localStorage.clear();
+// }
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -60,8 +66,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/login" element={<UserLogin />} />
-              <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route path="/login" element={<UserLogin />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/potluck/:potluckId" element={<Potluck />} />
             </Routes>
           </Router>

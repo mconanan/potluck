@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-color: #252422;
   /* background-image: url('./wooden-dark.png'); */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -43,7 +43,9 @@ code {
   width: 33.33%;
   padding: 5px;
 }
-
+.card-header h4 {
+  color: black;
+}
 /* Clear floats after image containers */
 .row::after {
   content: "";
@@ -67,10 +69,13 @@ code {
 .section {
   display: flex;
   justify-content: space-between;
-
-
 }
-
+/* .text-center {
+  background-color: white;
+} */
+.card {
+  color: black;
+}
 .div1 {
   color: white;
   font-size: 13px;
@@ -87,7 +92,7 @@ code {
   box-sizing: border-box;
 }
 .footer {
-  background-color: #606c38;
+  background-color:  #606c38;
   color: white;
   padding-top: 3em;
   position: fixed;
@@ -104,6 +109,12 @@ code {
 .footer {
   flex:  1;
 }
+.container {
+  color: white;
+}
+.card-header {
+  color: white;
+  }
 
 @media screen and (max-width: 500px) {
   .column {

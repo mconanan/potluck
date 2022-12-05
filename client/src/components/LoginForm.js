@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+// import { Form, Button, Alert } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 
@@ -22,24 +23,27 @@ const LoginForm = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+   console.log("here")
+;    console.log(formState);
     try {
       const { data } = await login({
         variables: { ...formState },
       });
 
       Auth.login(data.login.token);
+  
     } catch (e) {
       console.error(e);
     }
+
 
     // clear form values
     setFormState({
       email: '',
       password: '',
     });
+    
   };
-
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">

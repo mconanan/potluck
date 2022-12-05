@@ -7,7 +7,7 @@ const potluckSchema = new Schema(
     {
         potluckName: {
             type: String,
-            unique: true,
+            // unique: true,
             required: true,
         },
         // potluckAddress: {

@@ -29,9 +29,9 @@ function Navbar(props) {
             key={tab.text}
           >
             <Link to={tab.link}
-              onClick={() => props.handlePageChange(tab.text)} className={
-                props.currentPage === tab.text ? 'nav-link active' : 'nav-link'
-              }
+              // onClick={() => props.handlePageChange(tab.text)} className={
+              //   props.currentPage === tab.text ? 'nav-link active' : 'nav-link'
+              // }
             >
               {tab.text}
             </Link>
@@ -52,5 +52,6 @@ function Navbar(props) {
     </div>
   );
 }
+
 
 export default Navbar;
