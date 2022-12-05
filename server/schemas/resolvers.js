@@ -11,6 +11,9 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        potluck: async (parent, { potluckId }) => {
+            return Potluck.findOne({ _id: potluckId });
+        },
     },
 
     Mutation: {
@@ -40,24 +43,58 @@ const resolvers = {
 
             return { token, user };
         },
-        addPotluck: async (parent, { potluckName, potluckAddress, potluckDate }, context) => {
+        addPotluck: async (parent, { potluckName }, context) => {
             if (context.user) {
 
                 const createPotluck = await Potluck.create({
                     potluckName,
-                    potluckAddress,
-                    potluckDate,
-                    username: context.user.username,
+                    // potluckAddress,
+                    // potluckDate,
+                    // username: context.user.username,
                 });
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { potlucks: createPotluck._id } }
                 )
-
+            return createPotluck
             }
             throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
         },
+   
+        addItem: //update potluck to add item
+            async function (parent, { potluckId, itemName, itemDescription }, context) {
+                if (context.user) {
+
+
+                    //need potluck id
+                    return Potluck.findOneAndUpdate(
+                        { _id: potluckId },
+                        { $addToSet: { 
+                            items: { itemName, itemDescription, username: context.user.username } 
+                            }, 
+                        },
+                        {
+                            new: true,
+                            runValidators: true,
+                        }
+                    );
+                }
+                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
+            },
+        addComment: //update potluck to add comment
+            async function (parent, args, context) {
+                if (context.user) {
+
+                    //need potluck id
+                    const potluck = await Potluck.findOneAndUpdate(
+                        { _id: args.potluck_id },
+                        { $addToSet: { comments: { commentText: args.commentText, username: args.username } } }
+                    )
+                    return potluck
+                }
+                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
+            },
         addFriends:
             async function (parent, args, context) {
                 if (context.user) {
@@ -81,33 +118,6 @@ const resolvers = {
 
             }
         ,
-        addItem: //update potluck to add item
-            async function (parent, args, context) {
-                if (context.user) {
-
-
-                    //need potluck id
-                    const potluck = await Potluck.findOneAndUpdate(
-                        { _id: args.potluck_id },
-                        { $addToSet: { items: args } }
-                    )
-                    return potluck
-                }
-                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
-            },
-        addComment: //update potluck to add comment
-            async function (parent, args, context) {
-                if (context.user) {
-
-                    //need potluck id
-                    const potluck = await Potluck.findOneAndUpdate(
-                        { _id: args.potluck_id },
-                        { $addToSet: { comments: { commentText: args.commentText, username: args.username } } }
-                    )
-                    return potluck
-                }
-                throw new AuthenticationError('Something went wrong while creating your Potluck, please make sure you answer all questions on the form.');
-            }
     }
 };
 

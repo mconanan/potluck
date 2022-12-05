@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment');
+const commentSchema = require('./comment');
 const itemSchema = require('./Item');
 
 // Schema to create Potluck model
@@ -10,18 +10,18 @@ const potluckSchema = new Schema(
             unique: true,
             required: true,
         },
-        potluckAddress: {
-            type: String, 
-            unique: true, 
-            required: true,
-        },
-        potluckDate: {
-           //add type etc.
-           type: String, 
-        },
+        // potluckAddress: {
+        //     type: String, 
+        //     unique: true, 
+        //     required: true,
+        // },
+        // potluckDate: {
+        //    //add type etc.
+        //    type: String, 
+        // },
         items: [itemSchema],
         comments: [commentSchema],
-    
+
     },
     {
         toJSON: {

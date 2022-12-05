@@ -25,7 +25,7 @@ import Navbar from './components/Navbar';
 import UserLogin from './pages/UserLogin';
 import Logout from './pages/UserLogin'
 import Dashboard from './pages/Dashboard';
-// import Potluck from './pages/Potluck';
+import Potluck from './pages/Potluck';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -66,9 +66,9 @@ function App() {
             <Navbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/login" element={<UserLogin></UserLogin>} />
-              <Route exact path="/logout" element={<Logout/>} /> 
-              <Route exact path="/dashboard" element={<Dashboard></Dashboard>} />
+              <Route exact path="/login" element={<UserLogin />} />
+              <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route path="/potluck/:potluckId" element={<Potluck />} />
             </Routes>
           </Router>
         </div>

@@ -11,25 +11,22 @@ const typeDefs = gql`
   type Potluck {
     _id: ID
     potluckName: String
-    potluckAddress: String
-    potluckDate: String
-    item: [Item]
+    items: [Item]
     comments: [Comment]
   }
   
   type Comment {
-    comentId: ID
+    commentId: ID
     commentText: String
     username: String
     createdAt:String
   }
 
   type Item {
-    itemId:ID
+    _id: ID
     itemName: String
     itemDescription: String
     username:String
-    createdAt: String
   }
 
   type Auth {
@@ -39,22 +36,16 @@ const typeDefs = gql`
 
   type Query{
     me: User
+    potluck(potluckId: ID!): Potluck
   }
 
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
-  addPotluck(potluckName: String!, potluckAddress: String!, potluckDate: String!):Potluck
+  addPotluck(potluckName: String!):Potluck
   addFriends(username: String!): User
-  addItem(itemName: String! itemDescription: String!): Potluck
+  addItem(potluckId: ID!, itemName: String! itemDescription: String!): Potluck
   addComment(commentText: String! username:String!): Potluck
-    
-    
-
-
-  
-    
-  
 
 }
 `

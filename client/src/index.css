@@ -43,7 +43,9 @@ code {
   width: 33.33%;
   padding: 5px;
 }
-
+.card-header h4 {
+  color: black;
+}
 /* Clear floats after image containers */
 .row::after {
   content: "";
@@ -67,10 +69,13 @@ code {
 .section {
   display: flex;
   justify-content: space-between;
-
-
 }
-
+/* .text-center {
+  background-color: white;
+} */
+.card {
+  color: black;
+}
 .div1 {
   color: white;
   font-size: 13px;

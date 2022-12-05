@@ -25,13 +25,24 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_POTLUCK = gql `
-mutation addPotluck ($potluckName: String!, $potluckAddress: String!, $potluckDate: String) {
-  addPotluck(potluckName: $potluckName, potluckAddress: $potluckAddress, potluckDate: $potluckDate) {
-    potluck {
+mutation addPotluck ($potluckName: String!) {
+  addPotluck(potluckName: $potluckName) {
+      _id
       potluckName
-      potluckAddress
-      potluckDate
-    }
   }
 }
 `;
+
+export const ADD_ITEM = gql `
+mutation addItem($potluckId: ID!, $itemName: String!, $itemDescription: String!) {
+  addItem(potluckId: $potluckId, itemName: $itemName, itemDescription: $itemDescription) {
+    _id
+    potluckName
+    items {
+      _id
+      itemName
+      itemDescription
+    }
+  }
+}
+`

@@ -51,8 +51,8 @@ In order to contribute to this application, please contact the authors via email
 - ![Login-Signin](/potluck/client/public/Assets/signin.png)
 - ![Recipe](/potluck/client/public/Assets/Recepe.png)
 - ![Logout](/potluck/client/public/Assets/logout.png)
-
+- ![Potluck](/potluck/client/public/Assets/CreatePotluck.png)
 
 ##Links
 - [GitHub](https://github.com/mconanan/potluck)
-- [Heroku-Deploy](llink to depoy)
+- [Heroku-Deploy](https://potluck-app.herokuapp.com/)
