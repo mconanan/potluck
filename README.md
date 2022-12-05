@@ -55,4 +55,4 @@ In order to contribute to this application, please contact the authors via email
 
 ##Links
 - [GitHub](https://github.com/mconanan/potluck)
-- [Heroku-Deploy](https://potluck-app.herokuapp.com/)
+- [Heroku-Deploy](https://sharecuterie.herokuapp.com/)
