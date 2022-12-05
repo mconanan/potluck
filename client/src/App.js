@@ -66,8 +66,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/login" element={<UserLogin />} />
-              <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route path="/login" element={<UserLogin />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/potluck/:potluckId" element={<Potluck />} />
             </Routes>
           </Router>
