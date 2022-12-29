@@ -47,12 +47,12 @@ In order to contribute to this application, please contact the authors via email
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Screenshots
-- ![Screen-Shot](/potluck/client/public/Assets/home.png)
-- ![Screen-Shot](/potluck/client/public/Assets/signin.png)
-- ![Screen-Shot](/potluck/client/public/Assets/Recepe.png)
-- ![Screen-Shot](/potluck/client/public/Assets/logout.png)
-- ![Screen-Shot](/potluck/client/public/Assets/CreatePotluck.png)
+- <img width="1266" alt="home" src="https://user-images.githubusercontent.com/107022225/209749384-cf2135a0-d803-4fa2-bed8-a4067848fd17.png">
+- <img width="1265" alt="signin" src="https://user-images.githubusercontent.com/107022225/209749673-b71ff70b-24c1-425b-acb5-974e959d8e20.png">
+- <img width="1280" alt="Recipe" src="https://user-images.githubusercontent.com/107022225/209749797-20c73791-b842-40c6-8fdd-a378adaf00e9.png">
+- <img width="1280" alt="logout" src="https://user-images.githubusercontent.com/107022225/209749859-e5da1807-1b07-40fd-98d8-913276139c51.png">
+- <img width="1279" alt="CreatePotluck" src="https://user-images.githubusercontent.com/107022225/209749911-0df6b02f-5d1e-4109-8a40-0ccacf23a12c.png">
 
-##Links
+## Links
 - [GitHub](https://github.com/mconanan/potluck)
 - [Heroku-Deploy](https://sharecuterie.herokuapp.com/)
